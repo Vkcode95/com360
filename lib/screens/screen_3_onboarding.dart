@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+gimport 'package:flutter/material.dart';
 
 class OnboardingScreen3 extends StatelessWidget {
   const OnboardingScreen3({super.key});
@@ -62,7 +62,9 @@ class OnboardingScreen3 extends StatelessWidget {
                     borderRadius: BorderRadius.circular(30),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/onboarding4');
+                },
                 child: const Text('Next'),
               ),
             ],
