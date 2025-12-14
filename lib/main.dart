@@ -5,6 +5,7 @@ import 'screens/screen_1_splash.dart';
 import 'screens/screen_2_onboarding.dart';
 import 'screens/screen_3_onboarding.dart';
 import 'screens/screen_4_onboarding.dart';
+import 'screens/auth_entry.dart';
 
 void main() {
   runApp(const CoM360App());
@@ -18,14 +19,17 @@ class CoM360App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'CoM360',
+      theme: ThemeData(
+        useMaterial3: true,
+        brightness: Brightness.dark,
+      ),
       initialRoute: '/',
       routes: {
         '/': (context) => const Screen1Splash(),
-
-        // Onboarding flow (NO const here)
-        '/onboarding2': (context) => OnboardingScreen2(),
-        '/onboarding3': (context) => OnboardingScreen3(),
-        '/onboarding4': (context) => OnboardingScreen4(),
+        '/onboarding2': (context) => const OnboardingScreen2(),
+        '/onboarding3': (context) => const OnboardingScreen3(),
+        '/onboarding4': (context) => const OnboardingScreen4(),
+        '/auth': (context) => const AuthEntryScreen(),
       },
     );
   }
