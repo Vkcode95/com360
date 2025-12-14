@@ -1,29 +1,16 @@
 import 'package:flutter/material.dart';
 
-class Screen1Splash extends StatefulWidget {
+class Screen1Splash extends StatelessWidget {
   const Screen1Splash({super.key});
 
   @override
-  State<Screen1Splash> createState() => _Screen1SplashState();
-}
-
-class _Screen1SplashState extends State<Screen1Splash> {
-  @override
-  void initState() {
-    super.initState();
-    Future.delayed(const Duration(seconds: 2), () {
-      Navigator.pushReplacementNamed(context, '/screen2');
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: Colors.black,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
+          children: [
             Text(
               'CoM360',
               style: TextStyle(
