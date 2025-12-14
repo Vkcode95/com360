@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-    name: Build Phase 1 Auth APK
     runs-on: ubuntu-latest
 
     steps:
@@ -26,14 +25,22 @@ jobs:
         with:
           channel: stable
 
+      - name: Create Flutter Project Skeleton
+        run: flutter create app
+
+      - name: Inject App Source Code
+        run: |
+          rm -rf app/lib
+          cp -r lib app/lib
+
       - name: Install Dependencies
-        run: flutter pub get
+        run: cd app && flutter pub get
 
       - name: Build DEBUG APK
-        run: flutter build apk --debug --no-shrink
+        run: cd app && flutter build apk --debug --no-shrink
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: com360-phase1-auth-apk
-          path: build/app/outputs/flutter-apk/app-debug.apk
+          path: app/build/app/outputs/flutter-apk/app-debug.apk
