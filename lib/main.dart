@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'screens/screen_1_splash.dart';
 import 'screens/screen_2_onboarding.dart';
 import 'screens/screen_3_onboarding.dart';
+import 'screens/screen_4_onboarding.dart';
 
 void main() {
   runApp(const CoM360App());
@@ -22,6 +23,8 @@ class CoM360App extends StatelessWidget {
         '/screen3': (context) => const Placeholder(), // Screen 3 comes next
         '/onboarding3': (context) => const OnboardingScreen3(),
         '/login': (context) => const Placeholder(), // temporary
+        '/onboarding4': (context) => const OnboardingScreen4(),
+        '/login': (context) => const Placeholder(),
       },
     );
   }
