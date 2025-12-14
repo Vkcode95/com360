@@ -26,10 +26,8 @@ jobs:
         with:
           channel: stable
 
-      - name: Create Flutter App (clean)
-        run: |
-          flutter create .
-          flutter pub get
+      - name: Install Dependencies
+        run: flutter pub get
 
       - name: Build DEBUG APK
         run: flutter build apk --debug --no-shrink
