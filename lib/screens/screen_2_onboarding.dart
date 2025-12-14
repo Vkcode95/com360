@@ -18,7 +18,7 @@ class Screen2Onboarding extends StatelessWidget {
                 alignment: Alignment.topRight,
                 child: TextButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/screen3');
+                    Navigator.pushNamed(context, '/onboarding3');
                   },
                   child: const Text(
                     'Skip',
@@ -57,7 +57,7 @@ class Screen2Onboarding extends StatelessWidget {
               // Next button
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/screen3');
+                  Navigator.pushNamed(context, '/onboarding3');
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.white,
