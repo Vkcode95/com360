@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 
 class Screen1Splash extends StatefulWidget {
@@ -12,12 +13,9 @@ class _Screen1SplashState extends State<Screen1Splash> {
   void initState() {
     super.initState();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      Future.delayed(const Duration(seconds: 2), () {
-        if (mounted) {
-          Navigator.pushReplacementNamed(context, '/screen2');
-        }
-      });
+    // Auto navigate after 2 seconds
+    Timer(const Duration(seconds: 2), () {
+      Navigator.pushReplacementNamed(context, '/onboarding2');
     });
   }
 
@@ -27,14 +25,14 @@ class _Screen1SplashState extends State<Screen1Splash> {
       backgroundColor: Colors.black,
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
           children: [
             Text(
               'CoM360',
               style: TextStyle(
-                fontSize: 32,
-                fontWeight: FontWeight.bold,
                 color: Colors.white,
+                fontSize: 34,
+                fontWeight: FontWeight.bold,
               ),
             ),
             SizedBox(height: 12),
@@ -42,8 +40,8 @@ class _Screen1SplashState extends State<Screen1Splash> {
               'Infinite Commerce.\nZero Boundaries.',
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 14,
                 color: Colors.white70,
+                fontSize: 14,
               ),
             ),
           ],
