@@ -13,17 +13,13 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // 🔹 Back button
               IconButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
+                onPressed: () => Navigator.pop(context),
                 icon: const Icon(Icons.arrow_back),
               ),
 
               const SizedBox(height: 24),
 
-              // 🔹 Title
               const Text(
                 'Welcome to CoM360',
                 style: TextStyle(
@@ -44,7 +40,6 @@ class LoginScreen extends StatelessWidget {
 
               const SizedBox(height: 40),
 
-              // 🔹 Phone / Email input
               TextField(
                 keyboardType: TextInputType.phone,
                 decoration: InputDecoration(
@@ -58,13 +53,11 @@ class LoginScreen extends StatelessWidget {
 
               const SizedBox(height: 24),
 
-              // 🔹 Continue button
               SizedBox(
                 width: double.infinity,
                 height: 54,
                 child: ElevatedButton(
                   onPressed: () {
-                    // 🔜 Next step: OTP screen
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
                         content: Text('OTP screen coming next'),
@@ -89,7 +82,6 @@ class LoginScreen extends StatelessWidget {
 
               const Spacer(),
 
-              // 🔹 Footer
               const Center(
                 child: Text(
                   'By continuing, you agree to our Terms & Privacy Policy',
