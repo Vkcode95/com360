@@ -11,45 +11,61 @@ class OnboardingScreen3 extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(24),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Spacer(),
-
-              const Text(
-                'Secure Payments',
-                style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
+              // Skip button (top right)
+              Align(
+                alignment: Alignment.topRight,
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/onboarding4');
+                  },
+                  child: const Text(
+                    'Skip',
+                    style: TextStyle(color: Colors.grey),
+                  ),
                 ),
-                textAlign: TextAlign.center,
               ),
 
-              const SizedBox(height: 16),
-
-              const Text(
-                'Pay, receive, and manage money safely inside CoM360.',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.black54,
-                ),
-                textAlign: TextAlign.center,
+              // Main content
+              Column(
+                children: const [
+                  SizedBox(height: 40),
+                  Text(
+                    'Secure Payments',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                  SizedBox(height: 16),
+                  Text(
+                    'Pay, receive, and manage money safely inside CoM360.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.grey,
+                    ),
+                  ),
+                ],
               ),
 
-              const Spacer(),
-
+              // Next button (bottom)
               SizedBox(
                 width: double.infinity,
                 height: 52,
                 child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/onboarding4');
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.black,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
                     ),
                   ),
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/onboarding4');
-                  },
                   child: const Text(
                     'Next',
                     style: TextStyle(
