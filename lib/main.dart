@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// Import screens
+// Screens
 import 'screens/screen_1_splash.dart';
 import 'screens/screen_2_onboarding.dart';
 import 'screens/screen_3_onboarding.dart';
@@ -20,13 +20,12 @@ class CoM360App extends StatelessWidget {
       title: 'CoM360',
       initialRoute: '/',
       routes: {
-        // Splash
         '/': (context) => const Screen1Splash(),
 
-        // Onboarding flow
-        '/onboarding2': (context) => const OnboardingScreen2(),
-        '/onboarding3': (context) => const OnboardingScreen3(),
-        '/onboarding4': (context) => const OnboardingScreen4(),
+        // Onboarding flow (NO const here)
+        '/onboarding2': (context) => OnboardingScreen2(),
+        '/onboarding3': (context) => OnboardingScreen3(),
+        '/onboarding4': (context) => OnboardingScreen4(),
       },
     );
   }
