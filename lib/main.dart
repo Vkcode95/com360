@@ -6,6 +6,7 @@ import 'screens/screen_2_onboarding.dart';
 import 'screens/screen_3_onboarding.dart';
 import 'screens/screen_4_onboarding.dart';
 import 'screens/auth_entry.dart';
+import 'screens/login_screen.dart';
 
 void main() {
   runApp(const CoM360App());
@@ -30,6 +31,7 @@ class CoM360App extends StatelessWidget {
         '/onboarding3': (context) => const OnboardingScreen3(),
         '/onboarding4': (context) => const OnboardingScreen4(),
         '/auth': (context) => const AuthEntryScreen(),
+        '/login': (context) => const LoginScreen(),
       },
     );
   }
