@@ -13,13 +13,17 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // 🔹 Back button
               IconButton(
-                onPressed: () => Navigator.pop(context),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
                 icon: const Icon(Icons.arrow_back),
               ),
 
               const SizedBox(height: 24),
 
+              // 🔹 Title
               const Text(
                 'Welcome to CoM360',
                 style: TextStyle(
@@ -30,6 +34,7 @@ class LoginScreen extends StatelessWidget {
 
               const SizedBox(height: 8),
 
+              // 🔹 Subtitle
               const Text(
                 'Login to continue',
                 style: TextStyle(
@@ -40,6 +45,7 @@ class LoginScreen extends StatelessWidget {
 
               const SizedBox(height: 40),
 
+              // 🔹 Mobile number input
               TextField(
                 keyboardType: TextInputType.phone,
                 decoration: InputDecoration(
@@ -53,16 +59,13 @@ class LoginScreen extends StatelessWidget {
 
               const SizedBox(height: 24),
 
+              // 🔹 Continue button → OTP
               SizedBox(
                 width: double.infinity,
                 height: 54,
                 child: ElevatedButton(
                   onPressed: () {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text('OTP screen coming next'),
-                      ),
-                    );
+                    Navigator.pushNamed(context, '/otp');
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.black,
@@ -74,28 +77,4 @@ class LoginScreen extends StatelessWidget {
                     'Continue',
                     style: TextStyle(
                       fontSize: 18,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ),
-
-              const Spacer(),
-
-              const Center(
-                child: Text(
-                  'By continuing, you agree to our Terms & Privacy Policy',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.black45,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
+                      color:
