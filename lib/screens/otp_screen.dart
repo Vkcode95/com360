@@ -13,14 +13,17 @@ class OtpScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Back button
+              // 🔹 Back button
               IconButton(
-                onPressed: () => Navigator.pop(context),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
                 icon: const Icon(Icons.arrow_back),
               ),
 
               const SizedBox(height: 24),
 
+              // 🔹 Title
               const Text(
                 'Verify OTP',
                 style: TextStyle(
@@ -31,6 +34,7 @@ class OtpScreen extends StatelessWidget {
 
               const SizedBox(height: 8),
 
+              // 🔹 Subtitle
               const Text(
                 'Enter the 6-digit code sent to your mobile number',
                 style: TextStyle(
@@ -41,7 +45,7 @@ class OtpScreen extends StatelessWidget {
 
               const SizedBox(height: 40),
 
-              // OTP input
+              // 🔹 OTP input field
               TextField(
                 keyboardType: TextInputType.number,
                 maxLength: 6,
@@ -56,49 +60,13 @@ class OtpScreen extends StatelessWidget {
 
               const SizedBox(height: 24),
 
-              // Verify button
+              // 🔹 Verify button → Home
               SizedBox(
                 width: double.infinity,
                 height: 54,
                 child: ElevatedButton(
                   onPressed: () {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text('OTP verified (placeholder)'),
-                      ),
-                    );
+                    Navigator.pushReplacementNamed(context, '/home');
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.black,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                  ),
-                  child: const Text(
-                    'Verify',
-                    style: TextStyle(
-                      fontSize: 18,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ),
-
-              const SizedBox(height: 24),
-
-              Center(
-                child: TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    'Resend OTP',
-                    style: TextStyle(color: Colors.black54),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
