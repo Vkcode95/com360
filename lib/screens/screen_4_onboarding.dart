@@ -12,12 +12,12 @@ class OnboardingScreen4 extends StatelessWidget {
           padding: const EdgeInsets.all(24),
           child: Column(
             children: [
-              // 🔹 Skip button
+              // 🔹 Skip button (TOP RIGHT)
               Align(
                 alignment: Alignment.topRight,
                 child: TextButton(
                   onPressed: () {
-                    Navigator.pushReplacementNamed(context, '/auth');
+                    Navigator.pushReplacementNamed(context, '/login');
                   },
                   child: const Text(
                     'Skip',
@@ -54,13 +54,13 @@ class OnboardingScreen4 extends StatelessWidget {
 
               const Spacer(),
 
-              // 🔹 Get Started button
+              // 🔹 Get Started button (BOTTOM)
               SizedBox(
                 width: double.infinity,
                 height: 54,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushReplacementNamed(context, '/auth');
+                    Navigator.pushReplacementNamed(context, '/login');
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
@@ -85,5 +85,3 @@ class OnboardingScreen4 extends StatelessWidget {
     );
   }
 }
-
-
