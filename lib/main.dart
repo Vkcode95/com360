@@ -1,13 +1,17 @@
+
 import 'package:flutter/material.dart';
 
-// Screens
+// Splash & Onboarding
 import 'screens/screen_1_splash.dart';
 import 'screens/screen_2_onboarding.dart';
 import 'screens/screen_3_onboarding.dart';
 import 'screens/screen_4_onboarding.dart';
-import 'screens/auth_entry.dart';
+
+// Auth
 import 'screens/login_screen.dart';
 import 'screens/otp_screen.dart';
+
+// Home
 import 'screens/home_placeholder.dart';
 
 void main() {
@@ -22,19 +26,21 @@ class CoM360App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'CoM360',
-      theme: ThemeData(
-        useMaterial3: true,
-        brightness: Brightness.dark,
-      ),
       initialRoute: '/',
       routes: {
+        // 🔹 Splash
         '/': (context) => const Screen1Splash(),
+
+        // 🔹 Onboarding flow
         '/onboarding2': (context) => const OnboardingScreen2(),
         '/onboarding3': (context) => const OnboardingScreen3(),
         '/onboarding4': (context) => const OnboardingScreen4(),
-        '/auth': (context) => const AuthEntryScreen(),
+
+        // 🔹 Auth flow
         '/login': (context) => const LoginScreen(),
         '/otp': (context) => const OtpScreen(),
+
+        // 🔹 Home (Phase-2 placeholder)
         '/home': (context) => const HomePlaceholderScreen(),
       },
     );
