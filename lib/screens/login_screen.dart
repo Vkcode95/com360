@@ -6,75 +6,67 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.black,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(24),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              // 🔹 Back button
-              IconButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                icon: const Icon(Icons.arrow_back),
-              ),
+              const Spacer(),
 
-              const SizedBox(height: 24),
-
-              // 🔹 Title
               const Text(
-                'Welcome to CoM360',
+                'Login',
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
+                  color: Colors.white,
                 ),
               ),
 
-              const SizedBox(height: 8),
+              const SizedBox(height: 24),
 
-              // 🔹 Subtitle
-              const Text(
-                'Login to continue',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.black54,
-                ),
-              ),
-
-              const SizedBox(height: 40),
-
-              // 🔹 Mobile number input
               TextField(
                 keyboardType: TextInputType.phone,
+                style: const TextStyle(color: Colors.white),
                 decoration: InputDecoration(
-                  labelText: 'Mobile Number',
-                  hintText: 'Enter your mobile number',
+                  hintText: 'Enter mobile number',
+                  hintStyle: const TextStyle(color: Colors.white54),
+                  filled: true,
+                  fillColor: Colors.white12,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide.none,
                   ),
                 ),
               ),
 
               const SizedBox(height: 24),
 
-              // 🔹 Continue button → OTP
-              SizedBox(
-                width: double.infinity,
-                height: 54,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/otp');
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.black,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/otp');
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  foregroundColor: Colors.black,
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
                   ),
-                  child: const Text(
-                    'Continue',
-                    style: TextStyle(
-                      fontSize: 18,
-                      color:
+                ),
+                child: const Text(
+                  'Send OTP',
+                  style: TextStyle(fontSize: 16),
+                ),
+              ),
+
+              const Spacer(),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
