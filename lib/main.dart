@@ -13,6 +13,7 @@ import 'screens/otp_screen.dart';
 
 // Home
 import 'screens/home_placeholder.dart';
+import 'screens/home_screen.dart';
 
 void main() {
   runApp(const CoM360App());
@@ -41,7 +42,7 @@ class CoM360App extends StatelessWidget {
         '/otp': (context) => const OtpScreen(),
 
         // 🔹 Home (Phase-2 placeholder)
-        '/home': (context) => const HomePlaceholderScreen(),
+        '/home': (context) => const HomeScreen(),
       },
     );
   }
